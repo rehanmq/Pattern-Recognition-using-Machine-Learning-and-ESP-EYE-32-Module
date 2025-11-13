@@ -1,137 +1,178 @@
-Pattern Recognition using Machine Learning and ESP-EYE 32 Hardware Module
-DeepVisionEdge
+<p align="center">🚀 DeepVisionEdge
+<p align="center">On-Device Pattern Recognition using Machine Learning & ESP-EYE 32</p>
+<p align="center"> <img src="https://img.shields.io/badge/Platform-ESP--EYE%2032-blue?style=for-the-badge"> <img src="https://img.shields.io/badge/AI-Edge%20Impulse-green?style=for-the-badge"> <img src="https://img.shields.io/badge/Model-TFLite-orange?style=for-the-badge"> <img src="https://img.shields.io/badge/Language-C%20|%20Python%20|%20Node.js-yellow?style=for-the-badge"> </p>
+📌 Overview
 
-Explore the power of on-device AI with this ESP-EYE 32 object recognition system. Leveraging deep neural networks and Edge Impulse, this project demonstrates efficient and accurate pattern recognition for embedded applications.
+DeepVisionEdge is a real-time, on-device pattern recognition system built using the ESP-EYE 32 hardware module.
+The project uses deep neural networks + Edge Impulse to detect objects such as:
 
-🚀 Overview
+🔑 Key
 
-DeepVisionEdge is a project that demonstrates efficient and accurate pattern recognition using the ESP-EYE 32 module. Leveraging deep neural networks and Edge Impulse, this project achieves high-accuracy detection of objects like keys, mobile phones, and bottles—directly on the edge.
+📱 Mobile Phone
 
-🌟 Key Features
+🥤 Bottle
 
-On-Device AI: Real-time object recognition without cloud processing
+All processing happens locally on the embedded device, delivering fast inference and zero cloud dependency.
 
-Deep Neural Networks: Optimized for embedded deployment
+⚡ Achieves ~89% accuracy with optimized TensorFlow Lite inference.
 
-Edge Impulse Integration: Streamlined training & deployment
+📑 Table of Contents
 
-High Accuracy: ~89% accuracy in testing
+Features
 
-ESP-EYE 32 Optimized: Tailored for Espressif’s hardware
+Technologies Used
 
-🛠️ Technologies Used
+Architecture
 
-ESP-EYE 32 (ESP32 + Camera)
+Project Structure
 
-Edge Impulse
+Setup Instructions
 
-Python / Node.js
+Running the Model
 
-ESP Tool
+Results
 
-TensorFlow Lite (TFLite)
+Contributing
+
+License
+
+Contact
+
+🌟 Features
+
+✔ On-Device AI — real-time inference, no cloud required
+✔ Deep Neural Networks optimized for ESP32
+✔ Edge Impulse Integration for training + deployment
+✔ High Accuracy (~89%)
+✔ Lightweight TFLite Model
+✔ Ideal for low-power embedded vision
+
+🛠 Technologies Used
+Category	Tools
+Hardware	ESP-EYE 32
+Training & Deployment	Edge Impulse
+Model Format	TensorFlow Lite (TFLite)
+Languages	C, Python, Node.js
+Utilities	ESP-IDF / Arduino IDE / ESP Tool
+🧠 System Architecture
+Camera Input → Preprocessing → Edge Impulse Model (TFLite)
+              → ESP-EYE Inference Engine → Prediction Output
 
 📂 Project Structure
 DeepVisionEdge/
-├── dataset/                   # Captured and labeled images
+├── dataset/               # Raw & labeled images
 │   ├── key/
 │   ├── mobile_phone/
 │   ├── bottle/
-├── models/                    # TFLite models from Edge Impulse
-│   ├── esp32_model.tflite
-├── scripts/                   # Python/Node.js scripts + ESP32 code
+├── models/
+│   └── esp32_model.tflite
+├── scripts/
 │   ├── data_organization.py
 │   ├── esp32_inference.c
 ├── documentation/
 │   ├── setup_instructions.md
 │   ├── results.md
 ├── README.md
-├── LICENSE
+└── LICENSE
 
 🚀 Getting Started
-1. Prerequisites
+✔ 1. Prerequisites
+
+You will need:
 
 ESP-EYE 32 module
 
 ESP-IDF or Arduino IDE
 
+Python 3.x / Node.js
+
 Edge Impulse account
 
-Python 3.x or Node.js
+ESP Tool for flashing
 
-ESP Tool
-
-2. Setup Instructions
-Clone the Repository
+✔ 2. Clone the Repository
 git clone https://github.com/YOUR_USERNAME/DeepVisionEdge.git
 cd DeepVisionEdge
 
-Prepare Your Dataset
+✔ 3. Prepare Your Dataset
 
-Capture 300 images (100 per class)
-
-Store them in:
+Capture 300 images (100 each):
 
 dataset/key
 dataset/mobile_phone
 dataset/bottle
 
-Edge Impulse Setup
+✔ 4. Train the Model in Edge Impulse
 
-Log in → create a project
+Create Edge Impulse project
 
 Upload dataset
 
-Label images
+Label objects
 
-Create Impulse (processing + learning blocks)
+Create Impulse (MobileNetV2 transfer learning recommended)
 
-Train using MobileNetV2 transfer learning
+Train the model
 
-Test in “Live Classification”
+Test classification
 
-Go to Deployment → ESP32
+Deploy → ESP32
 
 Download .zip
 
 Move esp32_model.tflite → models/
 
-ESP-EYE 32 Deployment
+✔ 5. Flash to ESP-EYE 32
 
-Install ESP-IDF or Arduino IDE
+Using ESP-IDF / Arduino IDE:
 
-Use code from scripts/esp32_inference.c
+Add inference code (esp32_inference.c)
 
 Include the .tflite model
 
-Build and flash using ESP Tool
+Build the project
 
-View results on Serial Monitor
+Flash using ESP Tool
 
-3. Running and Testing
+Open Serial Monitor
 
-Power ESP-EYE 32
+📸 Running and Testing
 
-Show objects (key / phone / bottle) to camera
+Power on ESP-EYE
 
-View predictions in real-time on Serial Monitor
+Show object to the camera
+
+See predictions on the serial monitor:
+
+Detected: KEY (0.92)
 
 📈 Results
+Metric	Value
+Model Accuracy	~89%
+Inference Speed	Real-time
+Latency	Low
+On-device compute	ESP32 optimized
 
-Accuracy: ~89%
-
-Latency: Very low, real-time inference
-
-Detailed metrics in documentation/results.md
+👉 Detailed results available in:
+documentation/results.md
 
 🤝 Contributing
 
-Pull requests and issues are welcome.
+Pull requests are welcome!
+Feel free to open issues for suggestions or improvements.
 
 📄 License
 
-MIT License (see LICENSE file)
+Distributed under MIT License.
+See LICENSE for details.
 
 📬 Contact
 
-For queries, feel free to reach out.
+For questions or collaboration:
+
+📧 Your Email
+🔗 GitHub: https://github.com/YOUR_USERNAME
+
+✨ DeepVisionEdge — Bringing AI Vision to the Edge
+
+Real-time. Efficient. Embedded. Next-Gen.
